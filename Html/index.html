@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Comparaison d'images avant&apres</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../Css/styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="images">
+                <div class="img-1"></div>
+                <div class="img-2"></div>
+            </div>
+            <div class="slider">
+                <div class="drag-line">
+                    <span></span>
+                </div>
+                <input type="range" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <script>
+            const slider = document.querySelector(".slider input");
+            const img = document.querySelector(".images .img-2");
+            const dragLine = document.querySelector(".slider .drag-line");
+            slider.oninput = ()=>{
+                let sliderVal = slider.value;
+                dragLine.style.left = sliderVal + "%";
+                img.style.width = sliderVal + "%";
+            }
+        </script>
+    <!-- https://www.youtube.com/watch?v=7O3rEaZ_iUU&list=PLR3_M5yl0pYRhUCuzS7HrJk2kjLpSLaFE&index=2&t=327s-->
+    </body>
+</html>
